@@ -10,11 +10,14 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-
+    @IBOutlet weak var textLogin: TextField!
+    @IBOutlet weak var textPassword: TextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        textLogin.becomeFirstResponder()
     }
 
 }

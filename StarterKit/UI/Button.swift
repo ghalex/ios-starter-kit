@@ -13,19 +13,18 @@ class Button: UIButton {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        
         updateCornerRadius()
     }
     
     @IBInspectable
-    var rounded: Bool = false {
+    var radius: CGFloat = 0 {
         didSet {
             updateCornerRadius()
         }
     }
     
     func updateCornerRadius() {
-        layer.cornerRadius = rounded ? 10 : 0
+        layer.cornerRadius = radius
     }
 
 }
