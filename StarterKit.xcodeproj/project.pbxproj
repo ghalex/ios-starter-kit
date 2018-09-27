@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76CEA725215CEBC90014828C /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CEA724215CEBC90014828C /* NavigationController.swift */; };
 		76FA8CF5215A5ACE0051821D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FA8CF4215A5ACE0051821D /* AppDelegate.swift */; };
 		76FA8CF7215A5ACE0051821D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FA8CF6215A5ACE0051821D /* MainViewController.swift */; };
 		76FA8CFA215A5ACE0051821D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76FA8CF8215A5ACE0051821D /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		1E49C6D0F4B34437F5A0B1B8 /* Pods-StarterKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarterKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-StarterKit/Pods-StarterKit.release.xcconfig"; sourceTree = "<group>"; };
 		2F2A602B8C447D18BBD311B8 /* Pods_StarterKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarterKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76CEA724215CEBC90014828C /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		76FA8CF1215A5ACD0051821D /* StarterKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarterKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76FA8CF4215A5ACE0051821D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76FA8CF6215A5ACE0051821D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				76FA8CF4215A5ACE0051821D /* AppDelegate.swift */,
 				76FA8D0D215A63150051821D /* Theme.swift */,
 				76FA8CF8215A5ACE0051821D /* Main.storyboard */,
+				76CEA724215CEBC90014828C /* NavigationController.swift */,
 				76FA8CFD215A5ACE0051821D /* LaunchScreen.storyboard */,
 				76FA8D15215A77DD0051821D /* Assets.xcassets */,
 				76FA8D00215A5ACE0051821D /* Info.plist */,
@@ -250,6 +253,7 @@
 				76FA8D0C215A60D70051821D /* WelcomeViewController.swift in Sources */,
 				76FA8CF7215A5ACE0051821D /* MainViewController.swift in Sources */,
 				76FA8D14215A757B0051821D /* Button.swift in Sources */,
+				76CEA725215CEBC90014828C /* NavigationController.swift in Sources */,
 				76FA8D11215A64090051821D /* UIView.swift in Sources */,
 				76FA8D0E215A63150051821D /* Theme.swift in Sources */,
 				76FA8D0A215A609F0051821D /* SignupViewController.swift in Sources */,
