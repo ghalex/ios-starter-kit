@@ -12,12 +12,18 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var textLogin: TextField!
     @IBOutlet weak var textPassword: TextField!
+    @IBOutlet weak var viewContainer: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        textLogin.becomeFirstResponder()
+        self.viewContainer.bindToKeyboard()
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.viewContainer.endEditing(true)
+    }
+
+    @IBAction func onLogin(_ sender: Any) {
+    }
 }

@@ -5,6 +5,9 @@
       location = "group:/Users/aghiura@tibco.com/Projects/ios-starter-kit/StarterKit.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:StarterKit.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
