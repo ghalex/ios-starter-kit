@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/aghiura@tibco.com/Projects/ios-starter-kit/StarterKit.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:StarterKit.xcodeproj">
    </FileRef>
    <FileRef

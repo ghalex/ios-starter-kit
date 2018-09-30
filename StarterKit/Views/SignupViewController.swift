@@ -18,14 +18,20 @@ class SignupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewContainer.bindToKeyboard()
+        viewContainer.bindToKeyboard()
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.viewContainer.endEditing(true)
+        viewContainer.endEditing(true)
+    }
+
+    @IBAction func onBack(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func onCreate(_ sender: Any) {
+        // store.reducers.signup()
     }
 }

@@ -24,6 +24,10 @@ class LoginViewController: UIViewController {
         self.viewContainer.endEditing(true)
     }
 
+    @IBAction func onDismiss(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+
     @IBAction func onLogin(_ sender: Any) {
     }
 }

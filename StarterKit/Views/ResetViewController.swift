@@ -16,6 +16,10 @@ class ResetViewController: UIViewController {
         super.viewDidLoad()
     }
 
+    @IBAction func onBack(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+
     @IBAction func onReset(_ sender: Any) {
     }
 }
