@@ -6,6 +6,7 @@ target 'StarterKit' do
   use_frameworks!
 
   # Pods for StarterKit
+  pod 'ReSwift'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
 end

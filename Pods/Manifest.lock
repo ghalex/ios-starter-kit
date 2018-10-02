@@ -55,10 +55,12 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - ReSwift (4.0.1)
 
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
+  - ReSwift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -72,6 +74,7 @@ SPEC REPOS:
     - GoogleUtilities
     - GTMSessionFetcher
     - nanopb
+    - ReSwift
 
 SPEC CHECKSUMS:
   Firebase: 8c957f9cb3852b519180fb378801b7eeeba4d288
@@ -84,7 +87,8 @@ SPEC CHECKSUMS:
   GoogleUtilities: 06b66f9567769a7958db20a92f0128b2843e49d5
   GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  ReSwift: f4012c613e13da7398827fe5aebdb938eaed40a3
 
-PODFILE CHECKSUM: e1b5db2177b6ac6c7ff3ec0853abafde8a7e26ef
+PODFILE CHECKSUM: 6381bffc6a752ea2a63b530c70820678555a1978
 
-COCOAPODS: 1.6.0.beta.1
+COCOAPODS: 1.5.3

@@ -9,8 +9,6 @@
 import UIKit
 import Firebase
 
-let store = Store()
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

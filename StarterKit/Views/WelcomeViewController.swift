@@ -7,34 +7,41 @@
 //
 
 import UIKit
+import ReSwift
 
-class WelcomeViewController: UIViewController {
-    
-    @IBOutlet weak var btnFacebook: Button!
+class WelcomeViewController: UIViewController, StoreSubscriber {
+
     @IBOutlet weak var btnLogin: UIButton!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //btnFacebook.imageView?.contentMode = .scaleAspectFit
-        //btnFacebook.imageView?.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        //btnFacebook.imageEdgeInsets = UIEdgeInsets.init(top: 10, left: 10, bottom: 10, right: 10)
-        
+
         btnLogin.semanticContentAttribute = UIApplication.shared
             .userInterfaceLayoutDirection == .rightToLeft ? .forceLeftToRight : .forceRightToLeft
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-         navigationController?.setNavigationBarHidden(true, animated: false)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        appStore.subscribe(self)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+        appStore.unsubscribe(self)
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
 
+    func newState(state: AppState) {
+        let counterState = state.counter
+        btnLogin.titleLabel?.text = String(counterState.count)
+    }
+
+    @IBAction func onFacebook(_ sender: Any) {
+        appStore.dispatch(CounterAction.increase(value: 2))
+    }
 }
