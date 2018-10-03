@@ -1,5 +1,5 @@
 //
-//  Store.swift
+//  UsersStore.swift
 //  StarterKit
 //
 //  Created by Alexandru Ghiura on 02/10/2018.
@@ -8,9 +8,10 @@
 
 import Foundation
 import ReSwift
+import FirebaseAuth
 
-let store = Store(
-    reducer: appReducer,
-    state: AppState(),
-    middleware: [effectsMiddleware]
-)
+enum AuthActions: Action {
+    case changeUser(_ user: User?)
+    case busy(_ value: Bool)
+    case error(_ msg: String?)
+}

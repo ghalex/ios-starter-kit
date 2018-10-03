@@ -9,7 +9,7 @@
 import UIKit
 import ReSwift
 
-class WelcomeViewController: UIViewController, StoreSubscriber {
+class WelcomeViewController: UIViewController {
 
     @IBOutlet weak var btnLogin: UIButton!
     
@@ -20,28 +20,19 @@ class WelcomeViewController: UIViewController, StoreSubscriber {
             .userInterfaceLayoutDirection == .rightToLeft ? .forceLeftToRight : .forceRightToLeft
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: false)
-        appStore.subscribe(self)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: animated)
-        appStore.unsubscribe(self)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        if store.state.auth.currentUser != nil {
+            self.performSegue(withIdentifier: "toMain", sender: self)
+        }
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
 
-    func newState(state: AppState) {
-        let counterState = state.counter
-        btnLogin.titleLabel?.text = String(counterState.count)
-    }
-
     @IBAction func onFacebook(_ sender: Any) {
-        appStore.dispatch(CounterAction.increase(value: 2))
+        
     }
 }

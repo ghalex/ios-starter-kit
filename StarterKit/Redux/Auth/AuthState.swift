@@ -8,9 +8,11 @@
 
 import Foundation
 import ReSwift
+import FirebaseAuth
 
-struct AppState: StateType {
-    var version = "1.0.0"
-    var counter = CounterState()
-    var auth = AuthState()
+struct AuthState {
+    var busy: Bool = false
+    var currentUser: User? = Auth.auth().currentUser
+    var error: String? = nil
+    
 }

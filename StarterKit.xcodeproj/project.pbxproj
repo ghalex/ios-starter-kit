@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D55039F21640B0100615C44 /* AuthActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D55039E21640B0100615C44 /* AuthActions.swift */; };
+		0D5503A121640B0F00615C44 /* AuthReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5503A021640B0F00615C44 /* AuthReducer.swift */; };
+		0D5503A321640B1E00615C44 /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5503A221640B1E00615C44 /* AuthState.swift */; };
+		0D5503A521640D0000615C44 /* AuthEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5503A421640D0000615C44 /* AuthEffects.swift */; };
+		0D5503A72164F08800615C44 /* EffectMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5503A62164F08800615C44 /* EffectMiddleware.swift */; };
 		0DC59496215EA0610012D9B7 /* ResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC59495215EA0610012D9B7 /* ResetViewController.swift */; };
 		0DC59498215F6D800012D9B7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0DC59497215F6D7F0012D9B7 /* GoogleService-Info.plist */; };
 		76CEA725215CEBC90014828C /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CEA724215CEBC90014828C /* NavigationController.swift */; };
@@ -32,6 +37,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D55039E21640B0100615C44 /* AuthActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthActions.swift; sourceTree = "<group>"; };
+		0D5503A021640B0F00615C44 /* AuthReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthReducer.swift; sourceTree = "<group>"; };
+		0D5503A221640B1E00615C44 /* AuthState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthState.swift; sourceTree = "<group>"; };
+		0D5503A421640D0000615C44 /* AuthEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthEffects.swift; sourceTree = "<group>"; };
+		0D5503A62164F08800615C44 /* EffectMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectMiddleware.swift; sourceTree = "<group>"; };
 		0DC59495215EA0610012D9B7 /* ResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetViewController.swift; sourceTree = "<group>"; };
 		0DC59497215F6D7F0012D9B7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1E49C6D0F4B34437F5A0B1B8 /* Pods-StarterKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarterKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-StarterKit/Pods-StarterKit.release.xcconfig"; sourceTree = "<group>"; };
@@ -72,23 +82,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D55039D21640AF500615C44 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				0D55039E21640B0100615C44 /* AuthActions.swift */,
+				0D5503A021640B0F00615C44 /* AuthReducer.swift */,
+				0D5503A221640B1E00615C44 /* AuthState.swift */,
+				0D5503A421640D0000615C44 /* AuthEffects.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		0DC59499215F6F800012D9B7 /* Redux */ = {
 			isa = PBXGroup;
 			children = (
+				0D55039D21640AF500615C44 /* Auth */,
 				76F7107E2163A17200C3AAD2 /* Counter */,
-				76F7107D2163A16900C3AAD2 /* Users */,
 				76F7106D21639A1200C3AAD2 /* AppStore.swift */,
 				76F7107921639E9400C3AAD2 /* AppReducer.swift */,
+				0D5503A62164F08800615C44 /* EffectMiddleware.swift */,
 				76F7107321639B7500C3AAD2 /* AppState.swift */,
 			);
 			path = Redux;
-			sourceTree = "<group>";
-		};
-		76F7107D2163A16900C3AAD2 /* Users */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Users;
 			sourceTree = "<group>";
 		};
 		76F7107E2163A17200C3AAD2 /* Counter */ = {
@@ -278,7 +293,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-StarterKit/Pods-StarterKit-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-StarterKit/Pods-StarterKit-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework",
@@ -293,7 +308,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StarterKit/Pods-StarterKit-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StarterKit/Pods-StarterKit-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -303,7 +318,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D55039F21640B0100615C44 /* AuthActions.swift in Sources */,
 				76FA8D08215A608A0051821D /* LoginViewController.swift in Sources */,
+				0D5503A121640B0F00615C44 /* AuthReducer.swift in Sources */,
 				76F7107821639E0300C3AAD2 /* CounterAction.swift in Sources */,
 				76FA8D0C215A60D70051821D /* WelcomeViewController.swift in Sources */,
 				76FA8CF7215A5ACE0051821D /* MainViewController.swift in Sources */,
@@ -315,9 +332,12 @@
 				76CEA725215CEBC90014828C /* NavigationController.swift in Sources */,
 				76F7107C21639FF300C3AAD2 /* CounterReducer.swift in Sources */,
 				76FA8D11215A64090051821D /* UIView.swift in Sources */,
+				0D5503A321640B1E00615C44 /* AuthState.swift in Sources */,
 				0DC59496215EA0610012D9B7 /* ResetViewController.swift in Sources */,
+				0D5503A72164F08800615C44 /* EffectMiddleware.swift in Sources */,
 				76F7107421639B7500C3AAD2 /* AppState.swift in Sources */,
 				76FA8D0E215A63150051821D /* Theme.swift in Sources */,
+				0D5503A521640D0000615C44 /* AuthEffects.swift in Sources */,
 				76FA8D0A215A609F0051821D /* SignupViewController.swift in Sources */,
 				76FA8CF5215A5ACE0051821D /* AppDelegate.swift in Sources */,
 			);

@@ -13,10 +13,12 @@ func appReducer(action: Action, state: AppState?) -> AppState {
     var state = state ?? AppState()
     
     switch action {
-    case _ as CounterAction:
-        state.counter = counterReducer(action: action as! CounterAction, state: state.counter)
-    default:
-        print("default")
+        case _ as CounterAction:
+            state.counter = counterReducer(action: action as! CounterAction, state: state.counter)
+        case _ as AuthActions:
+            state.auth = authReducer(action: action as! AuthActions, state: state.auth)
+        default:
+            print("default")
     }
     
     return state

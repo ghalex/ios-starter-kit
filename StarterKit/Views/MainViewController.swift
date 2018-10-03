@@ -7,13 +7,26 @@
 //
 
 import UIKit
+import ReSwift
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController, StoreSubscriber {
+
+    @IBOutlet weak var btnLogout: UIButton!
+    @IBOutlet weak var labelMain: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        store.subscribe(self)
+    }
+    
+    func newState(state: AppState) {
+        labelMain.text = "Welcome: \(state.auth.currentUser?.displayName ?? "User")"
     }
 
-
+    @IBAction func onLogout(_ sender: Any) {
+        store.dispatch(AuthEffects.logout())
+        dismiss(animated: false)
+    }
+    
 }
 
