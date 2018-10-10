@@ -34,10 +34,19 @@
                                     <action selector="onLogout:" destination="Vuj-xb-E1k" eventType="touchUpInside" id="BgZ-6F-Sd6"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wG1-8V-7Ty">
+                                <rect key="frame" x="164" y="425.33333333333331" width="86" height="30"/>
+                                <state key="normal" title="Scan receipt"/>
+                                <connections>
+                                    <action selector="onScan:" destination="Vuj-xb-E1k" eventType="touchUpInside" id="Jnh-pO-zAy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="wG1-8V-7Ty" firstAttribute="top" secondItem="1QH-cZ-2pi" secondAttribute="bottom" constant="10" id="KGm-NK-Ben"/>
                             <constraint firstItem="1QH-cZ-2pi" firstAttribute="top" secondItem="EuU-mS-vIH" secondAttribute="bottom" constant="7" id="MTE-0H-rQu"/>
+                            <constraint firstItem="wG1-8V-7Ty" firstAttribute="centerX" secondItem="2dC-YG-oEM" secondAttribute="centerX" id="dY1-cc-Usr"/>
                             <constraint firstItem="EuU-mS-vIH" firstAttribute="centerY" secondItem="2dC-YG-oEM" secondAttribute="centerY" id="fnN-Ze-0y7"/>
                             <constraint firstItem="1QH-cZ-2pi" firstAttribute="centerX" secondItem="2dC-YG-oEM" secondAttribute="centerX" id="foa-Ni-gzn"/>
                             <constraint firstItem="EuU-mS-vIH" firstAttribute="centerX" secondItem="2dC-YG-oEM" secondAttribute="centerX" id="thR-ka-s0U"/>

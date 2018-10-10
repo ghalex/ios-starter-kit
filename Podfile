@@ -9,4 +9,6 @@ target 'StarterKit' do
   pod 'ReSwift'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Firebase/MLVision'
+  pod 'Firebase/MLVisionTextModel'
 end
