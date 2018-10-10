@@ -9,15 +9,23 @@
 import UIKit
 import ReSwift
 import Firebase
+import CoreLocation
 
 class MainViewController: UIViewController, StoreSubscriber {
 
     @IBOutlet weak var btnLogout: UIButton!
     @IBOutlet weak var labelMain: UILabel!
     
+    let manager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         store.subscribe(self)
+
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
     }
     
     func newState(state: AppState) {
@@ -63,35 +71,47 @@ class MainViewController: UIViewController, StoreSubscriber {
         return nil
     }
     
-    @IBAction func onScan(_ sender: Any) {
-        guard let uiImage = UIImage(named: "receipt") else {
-            return
-        }
-
-        let vision = Vision.vision()
-        let textRecognizer = vision.onDeviceTextRecognizer()
-        let image = VisionImage(image: uiImage)
-        
-        textRecognizer.process(image) { result, error in
-            guard error == nil else {
-                print(error?.localizedDescription)
-                return
-            }
-
-            let resultText = result!.text
-            let range = self.group(text: resultText, pattern: "tucano coffee", index: 0)
-            let bon = self.bonFiscal(text: resultText)
-            let cod = self.codFiscal(text: resultText)
-            
-            if range != nil {
-                print(resultText[range!])
-            }
-            
-            print("Bon fiscal: \(bon)")
-            print("Cod fiscal: \(cod)")
+//    func scanReceipt() {
+//        guard let uiImage = UIImage(named: "receipt4") else {
+//            return
+//        }
+//
+//        let vision = Vision.vision()
+//        let textRecognizer = vision.onDeviceTextRecognizer()
+//        let image = VisionImage(image: uiImage)
+//
+//        textRecognizer.process(image) { result, error in
+//            guard error == nil else {
+//                print(error?.localizedDescription)
+//                return
+//            }
+//
+//            let resultText = result!.text
+//            print(resultText)
+//            let range = self.group(text: resultText, pattern: "tucano coffee", index: 0)
+//            let bon = self.bonFiscal(text: resultText)
+//            let cod = self.codFiscal(text: resultText)
+//
+//            if range != nil {
+//                print(resultText[range!])
+//            }
+//
+//            print("Bon fiscal: \(bon)")
+//            print("Cod fiscal: \(cod)")
+//        
+//        }
+//    }
     
-        }
+    @IBAction func onScan(_ sender: Any) {
+        
         // fiscal nr:\s*([0-9]+)
     }
 }
 
+extension MainViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations[0]
+        let distance = location.distance(from: CLLocation(latitude: 45.756627, longitude: 21.222390))
+        print("Distance: ", distance)
+    }
+}
